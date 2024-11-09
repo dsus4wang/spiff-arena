@@ -18,7 +18,8 @@ You will see that there are two important functions that your command class must
 * `run`
 
 Code introspection is used based on the implementation of the `__init__` method to determine which parameters should be allowed in the properties panel.
-The `run` method is where the actual work is done (send HTTP request, etc).
+The `run` method is where the actual work is done (send HTTP request, etc.
+).
 
 If you end up writing a connector, please consider contributing it back to the community and please consider contributing to this documentation.
 Thank you!

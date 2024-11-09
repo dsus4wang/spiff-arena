@@ -31,7 +31,10 @@ To create your own custom extension, follow these steps:
 
 ![Extension Process Group](images/Extension1.png)
 
-- Create a process model in this group. You can give it whatever name you want. Then create a file inside the process model called `extension_uischema.json`. This will control how the extension will work.
+- Create a process model in this group.
+  You can give it whatever name you want.
+  Then create a file inside the process model called `extension_uischema.json`.
+  This will control how the extension will work.
 
 ![Extension](images/Extension_UI_schema.png)
 

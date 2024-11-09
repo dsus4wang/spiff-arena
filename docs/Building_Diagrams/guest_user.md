@@ -13,7 +13,8 @@ To verify the functionality of the Guest User Task feature, follow these steps:
 
 1. **Create a Process Model**:
 
-Design a process model that includes a manual or user task. Ensure you check the **"allow guest"** checkbox.
+Design a process model that includes a manual or user task.
+Ensure you check the **"allow guest"** checkbox.
 
 ![Guest user](images/guest_user1.png)
 
@@ -33,7 +34,7 @@ Create a URL in this format:
      ```
      [domain]/public/tasks/[process_instance_id]/[task_guid]
      ```
-     
+
 Replace `[domain]`, `[process_instance_id]`, and `[task_guid]` with appropriate values.
 
 5. **Test as a Guest User**:
@@ -41,4 +42,4 @@ Replace `[domain]`, `[process_instance_id]`, and `[task_guid]` with appropriate 
 Open an incognito or private browsing window (not logged into Spiff). Navigate to the constructed URL. Confirm that the guest user can complete the task.
 ![Guest user](images/guest_user3.png)
 
-The Guest User Task feature improves usability for non-logged-in users by allowing them to complete designated tasks seamlessly. 
+The Guest User Task feature improves usability for non-logged-in users by allowing them to complete designated tasks seamlessly.

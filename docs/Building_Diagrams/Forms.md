@@ -6,13 +6,16 @@ Whether you need a simple feedback form or a complex multi-step form, SpiffArena
 Let's dive in and explore the possibilities of creating forms in SpiffArena.
 
 ## Creating Forms
+
 Here are the ways to create forms:
 
 1. **Using JSON Schema**
 
-JSON Schema is a standard for describing the structure of data in a JSON file. JSON Schema forms the foundation for building forms in SpiffArena.
+JSON Schema is a standard for describing the structure of data in a JSON file.
+JSON Schema forms the foundation for building forms in SpiffArena.
 
-To simplify the form creation process, we use the React JSON Schema Form (RJSF) library. RJSF is a powerful tool that uses JSON Schema as its basis.
+To simplify the form creation process, we use the React JSON Schema Form (RJSF) library.
+RJSF is a powerful tool that uses JSON Schema as its basis.
 It enables you to create dynamic and interactive forms with ease.
 The RJSF library is open source, free to use, and follows the principles of open standards.
 
@@ -38,7 +41,9 @@ Upon creating a new BPMN file, open it to access the editor.
 
 **Start the Form Editor**
 
-- In the editor, go to the "Web form" section. Navigate to the "Web form" and If starting from scratch, launch the editor and name your file (e.g., "demo"). After saving, it will automatically generate three essential files for us: a schema, UI settings, and some example data.
+- In the editor, go to the "Web form" section.
+  Navigate to the "Web form" and If starting from scratch, launch the editor and name your file (e.g., "demo").
+  After saving, it will automatically generate three essential files for us: a schema, UI settings, and some example data.
 
 ![Form Editor](images/Form_editor.png)
 
@@ -76,6 +81,7 @@ This feature is useful when you want to present users with choices based on an e
 
 To implement dynamic enumerations, update the list of enumeration values by setting a variable in task data.
 In a script task, that would look like this:
+
 ```python
 #python
     fruits = [
@@ -93,24 +99,24 @@ In a script task, that would look like this:
         }
     ]
 ```
+
 Instead of using a script task to define the options directly, you could request information from a user using a form, access an API, or query an external database.
 
 Then use JSON like this (note the `options_from_task_data_var:fruits`) when defining the form in order to pull information from the variable called `fruits` that you defined in task data:
+
 ```json
-    {
-        "title": "Dropdown list",
-        "description": "A dropdown list with options pulled from existing Task Data. IMPORTANT - Add 'fruits' to Task Data before using this component!!!",
-        "type": "object",
-        "properties": {
-            "favoriteFruit": {
-                "title": "Select your favorite fruit",
-                "type": "string",
-                "anyOf": [
-                    "options_from_task_data_var:fruits"
-                ]
-            }
-        }
+{
+  "title": "Dropdown list",
+  "description": "A dropdown list with options pulled from existing Task Data. IMPORTANT - Add 'fruits' to Task Data before using this component!!! ",
+  "type": "object",
+  "properties": {
+    "favoriteFruit": {
+      "title": "Select your favorite fruit",
+      "type": "string",
+      "anyOf": ["options_from_task_data_var:fruits"]
     }
+  }
+}
 ```
 
 ### Checkbox Validation
@@ -123,8 +129,9 @@ To use checkbox validation, mark your boolean field required.
 This will force the value to be `true` (the checkbox must be checked) before the form can be submitted.
 
 ```{admonition} Note
-When working with both Python and JSON, be aware that `True` and `False` are capitalized in Python but must be lowercase (`true` and `false`) in JSON format. 
+When working with both Python and JSON, be aware that `True` and `False` are capitalized in Python but must be lowercase (`true` and `false`) in JSON format.
 ```
+
 ### Regex Validation
 
 Regex validation allows you to validate text input fields based on regular expressions.
@@ -140,6 +147,7 @@ You will use this feature when building forms that involve specifying date inter
 Use a date range selector by creating a form field using the following structure:
 
 Example for JSON schema:
+
 ```json
     "travel_date_range": {
         "type": "string",
@@ -148,13 +156,16 @@ Example for JSON schema:
         "validationErrorMessage": "You must select Travel dates"
     },
 ```
+
 Example for UI schema:
+
 ```json
     "travel_date_range":{
         "ui:widget": "date-range",
         "ui:help": "Indicate the travel start and end dates"
     },
 ```
+
 ### Date Validation
 
 Date validation when compared to another date allows you to ensure that a date field meets certain criteria concerning another date field.
@@ -169,6 +180,7 @@ For instance, you can require that a date must be equal to or greater than anoth
   You can choose to use "end" if the reference field is part of a range.
 
 This is an example where the end_date must be after the start_date:
+
 ```json
     "end_date": {
       "type": "string",
@@ -200,7 +212,6 @@ Here’s an example where `delivery_date` must be on or before `end_date`:
 If the referenced field is a date range, and you want to validate against the end of that range, the same `field:end_date` reference can be used, as the `maximumDate` will intuitively apply to the end of the range.
 
 Using maximum date validation, you can prevent dates from exceeding a certain threshold, which is essential for managing project timelines, delivery schedules, or any scenario where the latest permissible date is a factor.
-
 
 #### Date Validation Scenario: Enforcing Minimum and Maximum Date Constraints
 
@@ -295,6 +306,7 @@ Here's how to use it:
 ```
 
 ![Styling_Form](images/styling_forms.png)
+
 #### Key Points:
 
 - **Layout Design**: The `ui:layout` specifies that `firstName` and `lastName` should appear side by side. Each field's size adjusts according to the screen size (small, medium, large), utilizing grid columns for responsive design.
@@ -302,21 +314,25 @@ Here's how to use it:
 - **Simplified Configuration**: If column widths are unspecified, the layout will automatically adjust, providing flexibility in design.
 
 #### Example Illustrated:
+
 In this setup, we’re arranging `firstName` and `lastName` to appear in the same row, as they are grouped in the first element of the `ui:layout` array.
 
-We specify that `firstName` should occupy 4 columns on large displays, with `lastName` also taking up 4 columns, together filling the full row of 8 columns on large screens. For medium screens, the layout adapts to 5 columns, and for small screens, it adjusts to 4 columns. 
+We specify that `firstName` should occupy 4 columns on large displays, with `lastName` also taking up 4 columns, together filling the full row of 8 columns on large screens.
+For medium screens, the layout adapts to 5 columns, and for small screens, it adjusts to 4 columns.
 
 By defining a `uiSchema` like this, the layout will automatically adjust the column widths for each screen size.
+
 ```json
+{
+  "ui:layout": [
     {
-      "ui:layout": [
-        {
-          "firstName": {},
-          "lastName": {}
-        }
-      ]
+      "firstName": {},
+      "lastName": {}
     }
+  ]
+}
 ```
+
 By using the `ui:layout` feature, you can design form layouts that are not only functional but also enhance the user experience, making your forms well-organized and accessible across various screen sizes.
 
 ### Display UI Help in Web Forms
@@ -354,7 +370,8 @@ Here's how you can add help text to the `form_num_1` field and make the `system_
 In the example above:
 
 - The `form_num_1` field will automatically be focused when the form loads (due to the `"ui:autofocus": true` attribute).
-- The help text "Pick whatever # you want!" will be displayed for the `form_num_1` field.
+- The help text "Pick whatever # you want!"
+  will be displayed for the `form_num_1` field.
 
 **Output**:
 ![Display UI Help](images/Display_UI_Help.png)
@@ -435,7 +452,8 @@ This structure can be represented in the form's schema as follows:
 ```json
 {
   "title": "Nested Form / Repeating Section",
-  "description": "Allow the form submitter to add multiple entries for a set of fields.",
+  "description": "Allow the form submitter to add multiple entries for a set of fields.
+  ",
   "type": "object",
   "properties": {
     "tasks": {
@@ -452,7 +470,8 @@ This structure can be represented in the form's schema as follows:
           },
           "done": {
             "type": "boolean",
-            "title": "Done?",
+            "title": "Done?
+            ",
             "default": false
           }
         }

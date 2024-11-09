@@ -22,7 +22,7 @@ Editing process models locally is another perfectly good option, depending on yo
 1. Configure the environment to have a single replica for spiffworkflow-backend.
 2. Make your process model repository available to the backend, potentially by:
     * Cloning your repository as the container boots, either via an init container or as part of the startup command.
-    * Getting the repo onto a persistent volume that can be mounted into your container
+    * Getting the repo onto a persistent volume that can be mounted into your container.
 3. Set up environment variables like the following so all changes you make will be sent to your Git remote:
 
     ```sh

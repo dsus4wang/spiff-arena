@@ -67,7 +67,7 @@ Resuming a process is essential for ensuring that the process can continue its e
 ## Terminate a Process Instance
 
 Terminating refers to ending the execution of a specific occurrence of a process before it reaches its natural completion or final outcome.
-There are various reasons for terminating a process instance such as the instance is no longer required or it's in an error state.
+There are various reasons for terminating a process instance, such as the instance is no longer required or it's in an error state.
 
 > **Step 1: Locate Terminate Icon**
 
@@ -82,11 +82,9 @@ There are various reasons for terminating a process instance such as the instanc
 
 > **Step 3: Confirm Termination**
 
-- Before proceeding with the termination, it is essential to be absolutely certain about your decision.
-  ![terminate_warning](images/terminate_warning.png)
+- Before proceeding with the termination, it is essential to be absolutely certain about your decision. ![terminate_warning](images/terminate_warning.png)
 
-- The process status will now be 'Terminated' and the last active task will be highlighted in purple.
-  ![suspend](images/terminated_process_instance.png)
+- The process status will now be 'Terminated' and the last active task will be highlighted in purple. ![suspend](images/terminated_process_instance.png)
 
 |                              ✅ Success                              |
 | :------------------------------------------------------------------: |
@@ -103,30 +101,30 @@ There are various reasons for terminating a process instance such as the instanc
 
 > **Step 3: Suspend the Process**
 
-Ensure the status has changed from _user_input_required_ to _suspended_
-![Reset](images/reset_process2.png)
+Ensure the status has changed from _user_input_required_ to _suspended_ !
+[Reset](images/reset_process2.png)
 
 > **Step 4: Go to the relevant past activity**
 
 Only a previously completed section highlighted in grey can be chosen.
 
 > **Step 5: Select 'View process instance at the time when this task was active.
-> '**
+'**
 
 ![Reset](images/reset_process3.png)
 
 > **Step 6: Observe the task once highlighted in grey should now be yellow.
-> **
+**
 
 A previously completed section is now active and shown in yellow.
 
 > **Step 7: Select 'Reset Process Here' icon in the popup window.
-> **
+**
 
 ![Reset](images/reset_process5.png)
 
 > **Step 8: "Resume" process instance.
-> **
+**
 
 The process instance should be resumed by selecting the ‘Resume’ icon next to the Process Instance Id.
 
@@ -192,6 +190,7 @@ Migration is not possible when the following activities are active (started/read
 - Loop tasks
 - Signal boundary event - add/remove signals
 - Looping back through a part of a process which has already completed once
+
 #### Forms
 
 Forms are not serialized as part of the process model specification, and therefore are not considered during migration.
@@ -207,7 +206,7 @@ Therefore, if you change only a form, the system will not allow you to migrate t
       - the hash value of the bpmn process serialized form
       - this can be found from the migration events listed in the migration event list api
 - `POST /process-instance-migrate/{modified_process_model_identifier}/{process_instance_id}`
-  - Performs the migration of the process instance to newest version of the process model or the target_bpmn_process_hash if given.
+  - Performs the migration of the process instance to the newest version of the process model or the target_bpmn_process_hash if given.
     - The process instance must be suspended to do this.
   - Query params:
     - **target_bpmn_process_hash** OPTIONAL

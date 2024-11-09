@@ -20,7 +20,7 @@ flowchart LR
         black[Black]
         typeguard[TypeGuard]
     end
-        
+
     subgraph "frontend_tests"[Frontend Tests]
         vitest[Vitest]
         eslint[ESLint]

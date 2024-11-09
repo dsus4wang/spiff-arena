@@ -71,10 +71,14 @@ Allow a way to define custom landing pages that create different experiences for
 
 ### Markdown Rendering Could Be Better
 
-1. When creating a bulleted or numbered list, no bullets or numbers are displayed. This is a bug in our style sheets or something that is clearing out all styles.
-2. Limit the width of paragraphs to something reasonable. Having a line of text stretch across the entire screen is not a good experience.
-3. Add support for MyST. This provides a set of standard extensions to Markdown and is the extension we are using for our own documentation.
-4. Add support for parsing and displaying task data/Jinja2 syntax so you can immediately see how you are formatting the task data. Provide an additional area for setting the task data and have it render that information in place.
+1. When creating a bulleted or numbered list, no bullets or numbers are displayed.
+   This is a bug in our style sheets or something that is clearing out all styles.
+2. Limit the width of paragraphs to something reasonable.
+   Having a line of text stretch across the entire screen is not a good experience.
+3. Add support for MyST.
+   This provides a set of standard extensions to Markdown and is the extension we are using for our own documentation.
+4. Add support for parsing and displaying task data/Jinja2 syntax so you can immediately see how you are formatting the task data.
+   Provide an additional area for setting the task data and have it render that information in place.
 
 ## Administrator / Support Contact Information
 
@@ -99,12 +103,17 @@ I would love to have a day or two just to research this area and see if there is
 
 At runtime, or when you save, it would be great if we could execute a:
 
-- Validation Report - what is wrong with the model? Is it valid BPMN? Are there intrinsic errors?
-- Linting Report - Does the model follow common naming conventions, styles, are there deadlocks, etc.? Many of these tools already exist; we just need to integrate them!
+- Validation Report - what is wrong with the model?
+  Is it valid BPMN?
+  Are there intrinsic errors?
+- Linting Report - Does the model follow common naming conventions, styles, are there deadlocks, etc.
+  ?
+  Many of these tools already exist; we just need to integrate them!
 
 ### Plugins and Extensions
 
-- Track down our previous research and add here. Color picker, etc.
+- Track down our previous research and add here.
+  Color picker, etc.
 
 ### Automated Testing ✔️
 
@@ -124,7 +133,8 @@ Allow us to define a markdown file for a process group or process model, which w
 
 ### Form Builder ✔️
 
-1. Let's invest in a much better Form Builder experience so that it is trivial to build new forms or modify existing simple forms. We don't want to implement everything here, but a simple builder would be very useful.
+1. Let's invest in a much better Form Builder experience so that it is trivial to build new forms or modify existing simple forms.
+   We don't want to implement everything here, but a simple builder would be very useful.
 2. RJSF says it supports markdown in the headers, but it doesn't work for us.
 
 ### Text Area / Markdown / Select List for Service Task Parameters
